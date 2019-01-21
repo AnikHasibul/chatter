@@ -18,7 +18,7 @@ var Me string
 var Socket *websocketjs.WebSocket
 
 func NewSocket(session string) *websocketjs.WebSocket {
-	uri := fmt.Sprintf("ws://%s/socket/%s", "localhost:5000", session)
+	uri := fmt.Sprintf("ws://%s/socket/%s", js.Global.Get("window").Get("location").Get("host").String(), session)
 	ws, err := websocketjs.New(uri)
 	if err != nil {
 		panic(err)
