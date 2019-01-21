@@ -32,7 +32,7 @@ func setUpSock(socket *websocketjs.WebSocket) {
 	onOpen := func(e *js.Object) {
 		js.Global.
 			Get("window").
-			Call("alert", 1)
+			Call("alert", "Connected!")
 	}
 	// EVENT
 	onMessage := func(e *js.Object) {
