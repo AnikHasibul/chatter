@@ -1,0 +1,12 @@
+github.com/go-humble/detect v0.1.2 h1:mitrDomAvFJiH2D4LNwlRDj5d/3woOATAxKfIsoMP0I=
+github.com/go-humble/detect v0.1.2/go.mod h1:pVrYDy9oO+niVnRn94ljzppsRGpVs0l2+xTDW6u1nAQ=
+github.com/go-humble/router v0.5.0 h1:tVzuDGj2b8PDjyT/x/saIxgir+qfRdFGEkLuhpAECbU=
+github.com/go-humble/router v0.5.0/go.mod h1:skbvzVQASVDieX3rvgRsHnd7oe6JBr98BxAPeheHioM=
+github.com/gopherjs/gopherjs v0.0.0-20181103185306-d547d1d9531e h1:JKmoR8x90Iww1ks85zJ1lfDGgIiMDuIptTOhJq+zKyg=
+github.com/gopherjs/gopherjs v0.0.0-20181103185306-d547d1d9531e/go.mod h1:wJfORRmW1u3UXTncJ5qlYoELFm8eSnnEO6hX4iZ3EWY=
+github.com/gopherjs/vecty v0.0.0-20180525005238-a3bd138280bf h1:J7WjKCdpxMhXDzFPP6d41YonnCnPi1JkYOFxIPoH1E0=
+github.com/gopherjs/vecty v0.0.0-20180525005238-a3bd138280bf/go.mod h1:5YRDuy7i7SgM0kL+0b5oq+jfDTqPyzV3TQbcDkBvcoE=
+github.com/gopherjs/websocket v0.0.0-20170522004412-87ee47603f13 h1:3TcZe31zyrteCrSU2+4QSSx9N6sQC6PjXwrHjfX3USM=
+github.com/gopherjs/websocket v0.0.0-20170522004412-87ee47603f13/go.mod h1:jd+zY81Fx2lC4bfw58+Rflg1srqmedQjbBUejKOjYNY=
+honnef.co/go/js/dom v0.0.0-20181202134054-9dbdcd412bde h1:a/zxkB+dOtFR2DO19YIQtrpHfuZVprzJsA19Og0p53A=
+honnef.co/go/js/dom v0.0.0-20181202134054-9dbdcd412bde/go.mod h1:sUMDUKNB2ZcVjt92UnLy3cdGs+wDAcrPdV3JP6sVgA4=

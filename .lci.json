@@ -1,0 +1,36 @@
+{
+  "0Init": [
+    {
+      "Kill": [
+        "jobs",
+        "-p",
+	"xargs",
+	"kill"
+      ]
+    }
+  ],
+  "1Build": [
+    {
+      "GoBuild": [
+        "go",
+        "build"
+      ]
+    }
+  ],
+  "2Test": [
+    {
+      "GoTest": [
+        "go",
+        "test"
+      ]
+    }
+  ],
+  "3Run": [
+    {
+      "GoRun": [
+        "sh",
+        "run.sh"
+      ]
+    }
+  ]
+}
