@@ -2,9 +2,11 @@ package handlers
 
 import (
 	"net/http"
+	"os"
 	"strings"
 	"time"
 
+	database "github.com/anikhasibul/chatter/api/db"
 	"github.com/anikhasibul/chatter/api/util"
 	"github.com/anikhasibul/push"
 	"github.com/gorilla/websocket"
@@ -29,6 +31,8 @@ type outputModel struct {
 	Me     string `json:"me"`
 	Msg    string `json:"msg"`
 }
+
+var db = database.ConnectPSQL(os.Getenv("DATABASE_URL"))
 
 // ChatSocket handles the websocket connection for chat service.
 func ChatSocket(w http.ResponseWriter, r *http.Request) {
@@ -142,6 +146,17 @@ func ChatSocket(w http.ResponseWriter, r *http.Request) {
 				// all active clients on this session
 				sess.Push(in)
 				return
+			}
+			// log to database
+			if in.Type == 1 {
+				err = db.InsertLog(
+					in.Me,
+					in.Msg,
+				)
+				if err != nil {
+					log.Error(err)
+					return
+				}
 			}
 			// else push the
 			// received message
