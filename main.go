@@ -17,7 +17,7 @@ func main() {
 	rand.Seed(time.Now().UnixNano())
 	var addr = fmt.Sprintf(":%s", os.Getenv("PORT"))
 	if os.Getenv("PORT") == "" {
-		addr = "127.0.0.1:8080"
+		addr = "0.0.0.0:8080"
 	}
 	log.Info("Server starting on", addr)
 	router.Start()
