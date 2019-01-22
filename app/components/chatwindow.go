@@ -75,6 +75,16 @@ func (v *ChatWindow) ChatBubbles() *vecty.HTML {
 							"round-large",
 							"padding",
 						),
+						vecty.MarkupIf(m.From != "You",
+							vecty.Class(
+								"animate-left",
+							),
+						),
+						vecty.MarkupIf(m.From == "You",
+							vecty.Class(
+								"animate-right",
+							),
+						),
 					),
 					vecty.Text(m.Message),
 				),
