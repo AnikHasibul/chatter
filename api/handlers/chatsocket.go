@@ -202,6 +202,10 @@ func ChatSocket(w http.ResponseWriter, r *http.Request) {
 				if strings.Contains(err.Error(), "use of closed network connection") {
 					return
 				}
+				// ignore closed sent error
+				if strings.Contains(err.Error(), "websocket: close sent") {
+					return
+				}
 				// log any else error
 				log.Error(err)
 				return
@@ -248,6 +252,10 @@ func ChatSocket(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			// ignore closed conn error
 			if strings.Contains(err.Error(), "use of closed network connection") {
+				return
+			}
+			// ignore closed sent error
+			if strings.Contains(err.Error(), "websocket: close sent") {
 				return
 			}
 			// log other error
