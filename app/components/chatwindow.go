@@ -1,6 +1,7 @@
 package components
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/anikhasibul/chatter/app/model"
@@ -101,6 +102,7 @@ func (v *ChatWindow) ChatBubbles() *vecty.HTML {
 }
 
 func (v *ChatWindow) inputBox() *vecty.HTML {
+	idname := fmt.Sprint(time.Now().UnixNano())
 	return elem.Form(
 		vecty.Markup(
 			vecty.Class(
@@ -108,12 +110,12 @@ func (v *ChatWindow) inputBox() *vecty.HTML {
 				"container",
 			),
 			vecty.MarkupIf(v.EvFunc != nil,
-				v.EvFunc("chatbox"),
+				v.EvFunc(idname),
 			),
 		),
 		elem.Input(
 			vecty.Markup(
-				prop.ID("chatbox"),
+				prop.ID(idname),
 				vecty.Class(
 					"input",
 					"border-blue",
