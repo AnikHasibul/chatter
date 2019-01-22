@@ -15,7 +15,7 @@ func ChatFrontEnd(w http.ResponseWriter, r *http.Request) {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1">
-	<title>Chatter • </title>
+	<title>Chatter • v0.1</title>
 	<script src="/app/script.js" async defer></script>
 </head>
 <body>
