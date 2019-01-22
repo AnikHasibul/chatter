@@ -36,9 +36,6 @@ func setUpSock(socket *websocketjs.WebSocket) {
 	}
 	// EVENT
 	onMessage := func(e *js.Object) {
-		js.Global.
-			Get("console").
-			Call("log", e.Get("data"))
 		// Parse json
 		data := receive(e.Get("data").String())
 		// send pong to ping messages
@@ -73,7 +70,6 @@ func setUpSock(socket *websocketjs.WebSocket) {
 	}
 	// if it closes
 	onClose := func(e *js.Object) {
-		js.Global.Get("console").Call("log", e.Get("code"))
 		chatCOMP.Chats = append(chatCOMP.Chats, &model.Message{
 			From:    "0",
 			Message: "Connection closed! Code: " + e.Get("code").String(),
