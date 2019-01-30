@@ -1,0 +1,34 @@
+# github.com/NYTimes/gziphandler v1.0.1
+github.com/NYTimes/gziphandler
+# github.com/anikhasibul/log v0.1.0
+github.com/anikhasibul/log
+# github.com/anikhasibul/push v0.0.0-20190124171036-c86b66c26c13
+github.com/anikhasibul/push
+# github.com/go-humble/detect v0.1.2
+github.com/go-humble/detect
+# github.com/go-humble/router v0.5.0
+github.com/go-humble/router
+# github.com/gopherjs/gopherjs v0.0.0-20181103185306-d547d1d9531e
+github.com/gopherjs/gopherjs/js
+# github.com/gopherjs/vecty v0.0.0-20190121081546-d00da0c86b42
+github.com/gopherjs/vecty
+github.com/gopherjs/vecty/elem
+github.com/gopherjs/vecty/prop
+github.com/gopherjs/vecty/event
+# github.com/gopherjs/websocket v0.0.0-20170522004412-87ee47603f13
+github.com/gopherjs/websocket/websocketjs
+# github.com/gorilla/websocket v1.4.0
+github.com/gorilla/websocket
+# github.com/lib/pq v1.0.0
+github.com/lib/pq
+github.com/lib/pq/oid
+# github.com/withmandala/go-log v0.1.0
+github.com/withmandala/go-log/colorful
+github.com/withmandala/go-log/buffer
+# golang.org/x/crypto v0.0.0-20190130090550-b01c7a725664
+golang.org/x/crypto/ssh/terminal
+# golang.org/x/sys v0.0.0-20190130150945-aca44879d564
+golang.org/x/sys/unix
+golang.org/x/sys/windows
+# honnef.co/go/js/dom v0.0.0-20181202134054-9dbdcd412bde
+honnef.co/go/js/dom
