@@ -12,22 +12,48 @@ import (
 
 type ChatWindow struct {
 	vecty.Core
-	Session string
-	EvFunc  func(string) *vecty.EventListener
-	Chats   model.Chat
+	Session   string
+	ActiveNow int
+	EvFunc    func(string) *vecty.EventListener
+	Chats     model.Chat
 }
 
 func (v *ChatWindow) Render() vecty.ComponentOrHTML {
 	return elem.Body(
 		elem.Header(
 			vecty.Markup(
+				vecty.Style("margin-bottom", "80px"),
 				vecty.Class(
 					"container",
-					"center",
-					"text-blue",
+					"top",
+					"white",
+					"padding",
+					"card-2",
+					"bar",
 				),
 			),
-			vecty.Text("Copy the URL and share with your friends to invite them in this chat room!"),
+			elem.Span(
+				vecty.Markup(
+					vecty.Class(
+						"xlarge",
+						"left",
+						"text-blue",
+					),
+				),
+				vecty.Text("ChaTter"),
+			),
+			elem.Span(
+				vecty.Markup(
+					vecty.Class(
+						"xlarge",
+						"right",
+						"tag",
+						"round",
+						"green",
+					),
+				),
+				vecty.Text(fmt.Sprint(v.ActiveNow)),
+			),
 		),
 		elem.Div(
 			vecty.Markup(
@@ -77,12 +103,12 @@ func (v *ChatWindow) ChatBubbles() *vecty.HTML {
 						),
 						vecty.MarkupIf(m.From != "You",
 							vecty.Class(
-								"animate-left",
+								"animate-zoom",
 							),
 						),
 						vecty.MarkupIf(m.From == "You",
 							vecty.Class(
-								"animate-right",
+								"animate-opacity",
 							),
 						),
 					),
@@ -126,6 +152,7 @@ func (v *ChatWindow) inputBox() *vecty.HTML {
 		elem.Input(
 			vecty.Markup(
 				prop.ID(idname),
+				prop.Placeholder("Your message here!"),
 				vecty.Class(
 					"input",
 					"border-blue",
