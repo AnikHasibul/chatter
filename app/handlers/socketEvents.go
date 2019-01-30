@@ -18,7 +18,12 @@ var Me string
 var Socket *websocketjs.WebSocket
 
 func NewSocket(session string) *websocketjs.WebSocket {
-	uri := fmt.Sprintf("ws://%s/socket/%s", js.Global.Get("window").Get("location").Get("host").String(), session)
+	var uri string
+	if js.Global.Get("window").Get("location").Get("protocol").String() != "https" {
+		uri = fmt.Sprintf("ws://%s/socket/%s", js.Global.Get("window").Get("location").Get("host").String(), session)
+	} else {
+		uri = fmt.Sprintf("wss://%s/socket/%s", js.Global.Get("window").Get("location").Get("host").String(), session)
+	}
 	ws, err := websocketjs.New(uri)
 	if err != nil {
 		panic(err)
