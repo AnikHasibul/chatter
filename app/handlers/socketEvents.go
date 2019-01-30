@@ -35,9 +35,9 @@ func NewSocket(session string) *websocketjs.WebSocket {
 func setUpSock(socket *websocketjs.WebSocket) {
 	// EVENT
 	onOpen := func(e *js.Object) {
-		js.Global.
+		/*	js.Global.
 			Get("window").
-			Call("alert", "Connected!")
+			Call("alert", "Connected!")*/
 	}
 	// EVENT
 	onMessage := func(e *js.Object) {

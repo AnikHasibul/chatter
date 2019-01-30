@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/anikhasibul/chatter/app/model"
+	"github.com/gopherjs/gopherjs/js"
 	"github.com/gopherjs/vecty"
 	"github.com/gopherjs/vecty/elem"
 	"github.com/gopherjs/vecty/prop"
@@ -22,7 +23,6 @@ func (v *ChatWindow) Render() vecty.ComponentOrHTML {
 	return elem.Body(
 		elem.Header(
 			vecty.Markup(
-				vecty.Style("margin-bottom", "80px"),
 				vecty.Class(
 					"container",
 					"top",
@@ -57,8 +57,34 @@ func (v *ChatWindow) Render() vecty.ComponentOrHTML {
 		),
 		elem.Div(
 			vecty.Markup(
+				vecty.Style("margin-top", "80px"),
 				vecty.Class(
 					"container",
+				),
+			),
+			elem.Div(
+				vecty.Markup(
+					vecty.Class(
+						"panel",
+						"border",
+						"padding-32",
+						"round-large",
+						"border-blue",
+						"center",
+						"text-grey",
+					),
+				),
+				vecty.Text("Share this URL with your friends to invite them to this chatroom!"),
+				elem.Div(
+					vecty.Markup(
+						vecty.Class(
+							"input",
+							"small",
+							"black",
+							"code",
+						),
+					),
+					vecty.Text(js.Global.Get("window").Get("location").Get("href").String()),
 				),
 			),
 			v.ChatBubbles(),
@@ -156,6 +182,7 @@ func (v *ChatWindow) inputBox() *vecty.HTML {
 				vecty.Class(
 					"input",
 					"border-blue",
+					"round-large",
 				),
 				vecty.Style("margin-bottom", "20px"),
 			),
